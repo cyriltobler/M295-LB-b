@@ -1,39 +1,44 @@
+/* eslint-disable consistent-return */
+/* eslint-disable comma-dangle */
 const express = require('express');
-const router = express.Router();
 const { randomUUID } = require('node:crypto');
-const { isAuth } = require('./auth.js'/* #swagger.ignore = true*/);
+// eslint-disable-next-line spaced-comment
+const { isAuth } = require('./auth'/* #swagger.ignore = true*/);
+
+const router = express.Router();
 
 let tasks = [
     {
-        id: "1",
-        title: "Bahnhof",
-        author: "Cyril",
-        created_at: "2023-12-22T08:39:34.691Z"
+        id: '1',
+        title: 'Bahnhof',
+        author: 'Cyril',
+        created_at: '2023-12-22T08:39:34.691Z'
     },
     {
-        id: "2",
-        title: "Bahnhof",
-        author: "Cyril",
-        created_at: "2023-12-22T08:39:34.691Z"
+        id: '2',
+        title: 'Bahnhof',
+        author: 'Cyril',
+        created_at: '2023-12-22T08:39:34.691Z'
     }
 ];
 
-
 router.get('/', isAuth, (req, res) => {
+    // #swagger.summary = 'Get all tasks'
     res.json(tasks);
 });
 
 router.post('/', isAuth, (req, res) => {
-    const {title, author} = req.body;
-    if(!title || !author){
-        return res.status(422).json({error: "Title and author are required"});
-    };
+    // #swagger.summary = 'Create a new task'
+    const { title, author } = req.body;
+    if (!title || !author) {
+        return res.status(422).json({ error: 'Title and author are required' });
+    }
 
-    //create a new task
+    // create a new task
     const newTask = {
-        id:  randomUUID(),
-        title: title,
-        author: author,
+        id: randomUUID(),
+        title,
+        author,
         created_at: new Date(),
         done_at: undefined
     };
@@ -43,41 +48,44 @@ router.post('/', isAuth, (req, res) => {
 });
 
 router.get('/:id', isAuth, (req, res) => {
-    const task = tasks.find((task) => task.id === req.params.id);
+    // #swagger.summary = 'Get a task by ID'
+    const selectedTask = tasks.find((task) => task.id === req.params.id);
 
-    if(!task){
-        return res.status(404).json({error: "ID not found"});
-    };
+    if (!selectedTask) {
+        return res.status(404).json({ error: 'ID not found' });
+    }
 
-    res.json(task)
+    res.json(selectedTask);
 });
 
 router.patch('/:id', isAuth, (req, res) => {
-    const {title, author} = req.body;
+    // #swagger.summary = 'Edit a task by ID'
+    const { title, author } = req.body;
     const oldTask = tasks.find((task) => task.id === req.params.id);
 
-    if(!oldTask){
-        return res.status(404).json({error: "ID not found"});
-    };
+    if (!oldTask) {
+        return res.status(404).json({ error: 'ID not found' });
+    }
 
-    oldTask['author'] = author || oldTask['author'];
-    oldTask['title'] = title || oldTask['title'];
-    tasks = tasks.map((task) => task.id === req.params.id ? oldTask : task);
-    
+    oldTask.author = author || oldTask.author;
+    oldTask.title = title || oldTask.title;
+    tasks = tasks.map((task) => (task.id === req.params.id ? oldTask : task));
+
     res.json(oldTask);
 });
 
 router.delete('/:id', isAuth, (req, res) => {
-    const task = tasks.find((task) => task.id === req.params.id);
+    // #swagger.summary = 'Delete a task by ID'
+    const selectedTask = tasks.find((task) => task.id === req.params.id);
 
-    if(!task){
-        return res.status(404).json({error: "ID not found"});
-    };
+    if (!selectedTask) {
+        return res.status(404).json({ error: 'ID not found' });
+    }
 
-    //delete book
+    // delete book fromthe array
     tasks = tasks.filter((task) => task.id !== req.params.id);
 
-    res.json(task);
+    res.json(selectedTask);
 });
 
 module.exports = router;

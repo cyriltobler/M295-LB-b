@@ -16,6 +16,7 @@
         "tags": [
           "Tasks"
         ],
+        "summary": "Get all tasks",
         "description": "",
         "responses": {
           "200": {
@@ -27,6 +28,7 @@
         "tags": [
           "Tasks"
         ],
+        "summary": "Create a new task",
         "description": "",
         "parameters": [
           {
@@ -60,6 +62,7 @@
         "tags": [
           "Tasks"
         ],
+        "summary": "Get a task by ID",
         "description": "",
         "parameters": [
           {
@@ -82,6 +85,7 @@
         "tags": [
           "Tasks"
         ],
+        "summary": "Edit a task by ID",
         "description": "",
         "parameters": [
           {
@@ -119,6 +123,7 @@
         "tags": [
           "Tasks"
         ],
+        "summary": "Delete a task by ID",
         "description": "",
         "parameters": [
           {
@@ -143,6 +148,7 @@
         "tags": [
           "Authentication"
         ],
+        "summary": "Log In the user",
         "description": "",
         "parameters": [
           {
@@ -179,6 +185,7 @@
         "tags": [
           "Authentication"
         ],
+        "summary": "verify if user is logged in",
         "description": "",
         "responses": {
           "200": {
@@ -195,6 +202,7 @@
         "tags": [
           "Authentication"
         ],
+        "summary": "Log out the user",
         "description": "",
         "responses": {
           "204": {

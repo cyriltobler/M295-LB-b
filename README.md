@@ -2,7 +2,22 @@
 ## Tasks
 This project allows you to create and manage your own tasks after logging in with an e-mail of your choice and the password "m295". The exact commands are listed below.
 
-## Endpoints
+## Setup
+- First, the project is cloned to your folder
+    ``` bash
+    git clone https://github.com/cyriltobler/M295-LB-b.git
+    ```
+
+- The second step is to install all required packages
+    ``` bash
+    npm i
+    ```
+- The last thing to do is to start the project
+    ``` bash
+    npm run start
+    ```
+
+## Runtime
 
 ### Get All Tasks
 ``` bash

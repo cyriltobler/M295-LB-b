@@ -9,6 +9,12 @@ let tasks = [
         title: "Bahnhof",
         author: "Cyril",
         created_at: "2023-12-22T08:39:34.691Z"
+    },
+    {
+        id: "2",
+        title: "Bahnhof",
+        author: "Cyril",
+        created_at: "2023-12-22T08:39:34.691Z"
     }
 ];
 
@@ -54,11 +60,24 @@ router.patch('/:id', (req, res) => {
         return res.status(404).json({error: "ID not found"});
     };
 
-    oldTask['author'] = author || oldTask['author']
-    oldTask['title'] = title || oldTask['title']
+    oldTask['author'] = author || oldTask['author'];
+    oldTask['title'] = title || oldTask['title'];
     tasks = tasks.map((task) => task.id === req.params.id ? oldTask : task);
     
-    res.json(oldTask)
-})
+    res.json(oldTask);
+});
+
+router.delete('/:id', (req, res) => {
+    const task = tasks.find((task) => task.id === req.params.id);
+
+    if(!task){
+        return res.status(404).json({error: "ID not found"});
+    };
+
+    //delete book
+    tasks = tasks.filter((task) => task.id !== req.params.id);
+
+    res.json(task);
+});
 
 module.exports = router;

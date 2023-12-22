@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { randomUUID } = require('node:crypto');
-const { isAuth } = require('./auth.js')
+const { isAuth } = require('./auth.js'/* #swagger.ignore = true*/);
 
 let tasks = [
     {

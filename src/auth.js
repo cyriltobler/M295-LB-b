@@ -21,21 +21,23 @@ router.post('/login', (req, res) => {
     };
 });
 
-router.get('/verify', (req, res) => {
-    if(req.session.email){
-		return res.status(200).json({ email: req.session.email });
-	}
-    return res.status(401).json({ error: 'Not logged in' });
+router.get('/verify', isAuth, (req, res) => {
+    return res.status(200).json({ email: req.session.email });
 });
 
-router.delete('/logout',(req, res) => {
-    if(req.session.email){
-        req.session.email = null
+router.delete('/logout', isAuth, (req, res) => {
+    req.session.email = null
         
-		return res.status(204).send();
-	}
-
-    return res.status(401).json({ error: 'Not logged in' })
+	return res.status(204).send();
 })
 
-module.exports = router;
+function isAuth(req, res, next){
+    if(req.session.email){
+        return next();
+    }else{
+        return res.status(401).json({ error: "Not logged in" });
+    }
+}
+
+module.exports.isAuth = isAuth
+module.exports.router = router;

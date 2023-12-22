@@ -4,10 +4,10 @@ const app = express();
 
 const port = 3000;
 
-//load JSON middelware
+// load JSON middelware
 app.use(express.json())
 
-//load session-express middelware for cookies
+// load session-express middelware for cookies
 app.use(session({
     secret: 'supersecret',
         resave: false,
@@ -16,14 +16,14 @@ app.use(session({
 }))
 
 
-//import other files
+// import other files
 
 const tasks = require('./tasks.js');
 app.use('/tasks', tasks
     // #swagger.tags = ['Tasks']
 );
 
-const auth = require('./auth.js');
+const auth = require('./auth.js').router;
 app.use('/', auth
     // #swagger.tags = ['Authentication']
 );
@@ -31,5 +31,5 @@ app.use('/', auth
 
 // Server
 app.listen(port, () => {
-  console.log(`Bookstore app listening on port ${port}`);
+    console.log(`Bookstore app listening on port ${port}`);
 });

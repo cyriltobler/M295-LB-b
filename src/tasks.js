@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { randomUUID } = require('node:crypto');
+const { isAuth } = require('./auth.js')
 
 let tasks = [
     {
@@ -18,11 +19,11 @@ let tasks = [
 ];
 
 
-router.get('/', (req, res) => {
+router.get('/', isAuth, (req, res) => {
     res.json(tasks);
 });
 
-router.post('/', (req, res) => {
+router.post('/', isAuth, (req, res) => {
     const {title, author} = req.body;
     if(!title || !author){
         return res.status(422).json({error: "Title and author are required"});
@@ -41,7 +42,7 @@ router.post('/', (req, res) => {
     res.status(201).json(newTask);
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', isAuth, (req, res) => {
     const task = tasks.find((task) => task.id === req.params.id);
 
     if(!task){
@@ -51,7 +52,7 @@ router.get('/:id', (req, res) => {
     res.json(task)
 });
 
-router.patch('/:id', (req, res) => {
+router.patch('/:id', isAuth, (req, res) => {
     const {title, author} = req.body;
     const oldTask = tasks.find((task) => task.id === req.params.id);
 
@@ -66,7 +67,7 @@ router.patch('/:id', (req, res) => {
     res.json(oldTask);
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', isAuth, (req, res) => {
     const task = tasks.find((task) => task.id === req.params.id);
 
     if(!task){

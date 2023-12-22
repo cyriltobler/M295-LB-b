@@ -1,0 +1,704 @@
+{
+	"id": "bf802109-ffe5-47ed-957f-d02e4aa5d654",
+	"name": "M195-LB-b",
+	"timestamp": "2023-12-22T14:16:31.580Z",
+	"collection_id": "31935625-5de34dc2-7bc6-45be-ad8b-729dd4e80557",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 22,
+	"delay": "100",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-12-22T14:16:26.885Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "6c0b8f3d-7f02-4ee1-8ccb-0b660a8aaa8f",
+			"name": "login",
+			"url": "http://localhost:3000/login",
+			"time": 182,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				182
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "53e094ae-9693-4ecd-9858-d3b3e49d5562",
+			"name": "created",
+			"url": "http://localhost:3000/tasks",
+			"time": 7,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "12656799-e64c-4c15-b455-ea3692afd2e1",
+			"name": "no author",
+			"url": "http://localhost:3000/tasks",
+			"time": 6,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {
+				"Status code is 422": true
+			},
+			"testPassFailCounts": {
+				"Status code is 422": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 422": true
+				}
+			]
+		},
+		{
+			"id": "7b823721-046f-46ab-ac43-997e9d3b766e",
+			"name": "no title",
+			"url": "http://localhost:3000/tasks",
+			"time": 7,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {
+				"Status code is 422": true
+			},
+			"testPassFailCounts": {
+				"Status code is 422": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 422": true
+				}
+			]
+		},
+		{
+			"id": "137ee660-6d15-4956-be2a-1909b3dd81e1",
+			"name": "empty title",
+			"url": "http://localhost:3000/tasks",
+			"time": 7,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {
+				"Status code is 422": true
+			},
+			"testPassFailCounts": {
+				"Status code is 422": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 422": true
+				}
+			]
+		},
+		{
+			"id": "33de6d3f-dd2e-4da6-809b-1c8375e8b96e",
+			"name": "get",
+			"url": "http://localhost:3000/tasks/1",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "4db9451b-a48f-43c4-a6dd-a784a8f94f0f",
+			"name": "invalid ID",
+			"url": "http://localhost:3000/tasks/1111111111111111111111111",
+			"time": 7,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "82cfcd44-b0fe-4a37-80f2-56da87e0e690",
+			"name": "patch title",
+			"url": "http://localhost:3000/tasks/1",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "f0e26abb-40bd-4922-8eca-22fab8e629b0",
+			"name": "patch author",
+			"url": "http://localhost:3000/tasks/1",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "694e0a15-cb2c-4e77-984d-20787a34ce2d",
+			"name": "invalid ID",
+			"url": "http://localhost:3000/tasks/1111111111111111111111111",
+			"time": 8,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "60745591-1605-423a-9ece-1ef59f41bd45",
+			"name": "delete",
+			"url": "http://localhost:3000/tasks/2",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "4a1d389b-01e6-4cb4-85ed-7bd39cd6b2fb",
+			"name": "invalid ID",
+			"url": "http://localhost:3000/tasks/1111111111111111111111111",
+			"time": 7,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "be525cfa-46da-4874-9a3c-59ce5bc17d17",
+			"name": "-",
+			"url": "http://localhost:3000/tasks",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "d7851c52-188c-4a7c-995c-263cf106cede",
+			"name": "login",
+			"url": "http://localhost:3000/login",
+			"time": 6,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "fb061c9a-01b7-4b66-aead-aa96e5fa5efc",
+			"name": "no email",
+			"url": "http://localhost:3000/login",
+			"time": 6,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {
+				"Status code is 422": true
+			},
+			"testPassFailCounts": {
+				"Status code is 422": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 422": true
+				}
+			]
+		},
+		{
+			"id": "039b0d6c-a0bb-4536-a38f-1a6388075a08",
+			"name": "no password",
+			"url": "http://localhost:3000/login",
+			"time": 8,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {
+				"Status code is 422": true
+			},
+			"testPassFailCounts": {
+				"Status code is 422": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status code is 422": true
+				}
+			]
+		},
+		{
+			"id": "9d427c31-1a13-4120-a293-a33c2a2e98b8",
+			"name": "wrong password",
+			"url": "http://localhost:3000/login",
+			"time": 8,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "109d2b35-5428-45ad-af4b-9f20b044948a",
+			"name": "logout",
+			"url": "http://localhost:3000/logout",
+			"time": 6,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				}
+			]
+		},
+		{
+			"id": "5fbcea6b-1049-4d5a-845f-cb8b7684d79e",
+			"name": "logout 2",
+			"url": "http://localhost:3000/logout",
+			"time": 6,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "4389d8aa-b8f1-4711-afbc-4e84b89a8a69",
+			"name": "verify before",
+			"url": "http://localhost:3000/verify",
+			"time": 5,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "83b282e8-5ab0-4467-b04f-7b16c2a0db13",
+			"name": "login",
+			"url": "http://localhost:3000/login",
+			"time": 7,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "6247883e-4847-4413-91ac-8e53b9c24513",
+			"name": "verify after",
+			"url": "http://localhost:3000/verify",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 332,
+	"collection": {
+		"requests": [
+			{
+				"id": "6c0b8f3d-7f02-4ee1-8ccb-0b660a8aaa8f",
+				"method": "POST"
+			},
+			{
+				"id": "53e094ae-9693-4ecd-9858-d3b3e49d5562",
+				"method": "POST"
+			},
+			{
+				"id": "12656799-e64c-4c15-b455-ea3692afd2e1",
+				"method": "POST"
+			},
+			{
+				"id": "7b823721-046f-46ab-ac43-997e9d3b766e",
+				"method": "POST"
+			},
+			{
+				"id": "137ee660-6d15-4956-be2a-1909b3dd81e1",
+				"method": "POST"
+			},
+			{
+				"id": "33de6d3f-dd2e-4da6-809b-1c8375e8b96e",
+				"method": "GET"
+			},
+			{
+				"id": "4db9451b-a48f-43c4-a6dd-a784a8f94f0f",
+				"method": "GET"
+			},
+			{
+				"id": "82cfcd44-b0fe-4a37-80f2-56da87e0e690",
+				"method": "PATCH"
+			},
+			{
+				"id": "f0e26abb-40bd-4922-8eca-22fab8e629b0",
+				"method": "PATCH"
+			},
+			{
+				"id": "694e0a15-cb2c-4e77-984d-20787a34ce2d",
+				"method": "PATCH"
+			},
+			{
+				"id": "60745591-1605-423a-9ece-1ef59f41bd45",
+				"method": "DELETE"
+			},
+			{
+				"id": "4a1d389b-01e6-4cb4-85ed-7bd39cd6b2fb",
+				"method": "DELETE"
+			},
+			{
+				"id": "be525cfa-46da-4874-9a3c-59ce5bc17d17",
+				"method": "GET"
+			},
+			{
+				"id": "d7851c52-188c-4a7c-995c-263cf106cede",
+				"method": "POST"
+			},
+			{
+				"id": "fb061c9a-01b7-4b66-aead-aa96e5fa5efc",
+				"method": "POST"
+			},
+			{
+				"id": "039b0d6c-a0bb-4536-a38f-1a6388075a08",
+				"method": "POST"
+			},
+			{
+				"id": "9d427c31-1a13-4120-a293-a33c2a2e98b8",
+				"method": "POST"
+			},
+			{
+				"id": "109d2b35-5428-45ad-af4b-9f20b044948a",
+				"method": "DELETE"
+			},
+			{
+				"id": "5fbcea6b-1049-4d5a-845f-cb8b7684d79e",
+				"method": "DELETE"
+			},
+			{
+				"id": "4389d8aa-b8f1-4711-afbc-4e84b89a8a69",
+				"method": "GET"
+			},
+			{
+				"id": "83b282e8-5ab0-4467-b04f-7b16c2a0db13",
+				"method": "POST"
+			},
+			{
+				"id": "6247883e-4847-4413-91ac-8e53b9c24513",
+				"method": "GET"
+			}
+		]
+	}
+}

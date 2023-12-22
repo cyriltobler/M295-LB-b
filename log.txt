@@ -1,0 +1,83 @@
+commit 683ded8e5393105efa2b6dbf26e9321e4918f3c2
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 15:15:33 2023 +0000
+
+    chore: Formatted Code with ESLint
+
+commit 67dccf9d1158148b9822bfbbbf9942cc6b8b9cce
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 14:55:43 2023 +0000
+
+    chore: Completed README.md
+
+commit c9da61d47ecabea8d0f37c06cb28aae0805a612a
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 14:54:13 2023 +0000
+
+    chore: Added README.md
+
+commit 9c6fb338c2827c25a9df3ddeca683e7a29f64563
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 13:47:20 2023 +0000
+
+    chore: Added swagger documentation
+
+commit c06b909fe3c356d963231f34c33d18051c5033b1
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 13:06:42 2023 +0000
+
+    feat: Added Authorization for all requests
+
+commit a0222f409528cae638048013f67e6fe9ea121cfd
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 12:22:25 2023 +0000
+
+    feat: Created delete /logout
+
+commit 8b84e44b622d3fc2580488797502234009065e53
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 12:18:38 2023 +0000
+
+    feat: Created get /verify
+
+commit 1e8c32d84e74c74bdebf860639b0cd76d1dfc0bd
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 10:30:06 2023 +0000
+
+    feat: Created post /login
+
+commit cd88f400003b043a9de3de6ad85804523f6d6fdd
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 09:48:15 2023 +0000
+
+    feat: Created delete /tasks/{id}
+
+commit 9f3bea3f5bbe9ae7fcd52641e32abaad63bc292f
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 09:38:25 2023 +0000
+
+    feat: Created patch /tasks/{id}
+
+commit 03aee76b7ea7bdc5822f998d93369889bf43fefb
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 09:17:16 2023 +0000
+
+    feat: Created get /tasks/{id}
+
+commit 560e13e0b21c385498e37a597d74a5407b56f9a1
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 08:40:42 2023 +0000
+
+    feat: Created post /tasks
+
+commit 04a2098a5b4900dd4fb02ae7330cdad7ef4c54e3
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 08:19:17 2023 +0000
+
+    feat: Created get /tasks/
+
+commit 9c71458bc3a0836b3dbed28094726d82b8c3a719
+Author: Cyril Tobler <cyriltobler@icloud.com>
+Date:   Fri Dec 22 08:01:10 2023 +0000
+
+    chore: initialize project

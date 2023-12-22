@@ -55,3 +55,6 @@ GET /verify
 ``` bash
 DELETE /logout
 ```
+
+## Author
+- [Cyril Tobler](https://github.com/cyriltobler)

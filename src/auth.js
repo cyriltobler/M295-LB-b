@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-
 const credentials = {
-    password: 'm295'
+    password: 'm295',
 };
 
 router.post('/login', (req, res) => {
@@ -22,6 +21,12 @@ router.post('/login', (req, res) => {
     };
 });
 
+router.get('/verify', (req, res) => {
+    if(req.session.email){
+		return res.status(200).json({ email: req.session.email });
+	}
+    return res.status(401).json({ error: 'Not logged in' });
+});
 
 
 module.exports = router;

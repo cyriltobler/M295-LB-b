@@ -3,7 +3,7 @@ const router = express.Router();
 const { randomUUID } = require('node:crypto');
 const { runInNewContext } = require('node:vm');
 
-const tasks = [
+let tasks = [
     {
         id: "1",
         title: "Bahnhof",
@@ -37,13 +37,28 @@ router.post('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    const task = tasks.find((task) => task.id === req.params.id)
+    const task = tasks.find((task) => task.id === req.params.id);
 
     if(!task){
-        res.status(404).json({error: "ID not found"});
-    }
+        return res.status(404).json({error: "ID not found"});
+    };
 
     res.json(task)
 });
+
+router.patch('/:id', (req, res) => {
+    const {title, author} = req.body;
+    const oldTask = tasks.find((task) => task.id === req.params.id);
+
+    if(!oldTask){
+        return res.status(404).json({error: "ID not found"});
+    };
+
+    oldTask['author'] = author || oldTask['author']
+    oldTask['title'] = title || oldTask['title']
+    tasks = tasks.map((task) => task.id === req.params.id ? oldTask : task);
+    
+    res.json(oldTask)
+})
 
 module.exports = router;
